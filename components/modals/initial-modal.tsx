@@ -1,11 +1,11 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import axios from "axios";
 
 import { FileUpload } from "@/components/file-upload";
 import { Button } from "@/components/ui/button";
@@ -56,7 +56,7 @@ export const InitialModal = () => {
 
   const isLoading = form.formState.isSubmitting;
 
-  const onSubmit = async(values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       await axios.post("/api/servers", values);
 
@@ -88,24 +88,20 @@ export const InitialModal = () => {
         </DialogHeader>
 
         <Form {...form}>
-
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-
             <div className="space-y-8 px-6">
-
               <div className="flex items-center justify-center text-center">
-
                 {/* Image Upload */}
                 <FormField
-                  control = {form.control}
+                  control={form.control}
                   name="imageUrl"
-                  render = {({field}) => (
+                  render={({field}) => (
                     <FormItem>
                       <FormControl>
                         <FileUpload
                           endpoint="serverImage"
-                          value = {field.value}
-                          onChange = {field.onChange}
+                          value={field.value}
+                          onChange={field.onChange}
                         />
                       </FormControl>
                     </FormItem>
@@ -114,20 +110,18 @@ export const InitialModal = () => {
               </div>
 
               <FormField
-                form = {form.field}
-                name = "name"
+                control={form.control}
+                name="name"
                 render = {({field}) => (
-
                 <FormItem>
                   <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
                     Server Name
                   </FormLabel>
-
                   <FormControl>
                     <Input
-                    disabled = {isLoading}
-                    className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
-                    placeholder="Enter server name"
+                      disabled={isLoading}
+                      className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
+                      placeholder="Enter server name"
                     {...field}
                     />
                   </FormControl>
