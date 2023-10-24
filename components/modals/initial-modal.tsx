@@ -1,14 +1,14 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
+import axios from "axios";
 
 import { FileUpload } from "@/components/file-upload";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -94,6 +94,8 @@ export const InitialModal = () => {
             <div className="space-y-8 px-6">
 
               <div className="flex items-center justify-center text-center">
+
+                {/* Image Upload */}
                 <FormField
                   control = {form.control}
                   name="imageUrl"
