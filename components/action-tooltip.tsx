@@ -22,13 +22,13 @@ export const ActionTooltip = ({
 }: ActionTooltipProps) => {
   return(
     <TooltipProvider>
-      <Tooltip delayDuration = {50}>
+      <Tooltip delayDuration={50}>
         <TooltipTrigger asChild>
           {children}
         </TooltipTrigger>
         <TooltipContent side={side} align={align}>
           <p className="font-semibold text-sm capitalize">
-          {label.toLowerCase()}
+            {label.toLowerCase()}
           </p>
         </TooltipContent>
       </Tooltip>
