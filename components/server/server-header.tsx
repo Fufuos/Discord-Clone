@@ -99,7 +99,8 @@ export const ServerHeader = ({
           )}
 
           {isAdmin && (
-            <DropdownMenuItem
+          <DropdownMenuItem
+              onClick={() => onOpen("deleteServer", { server })}
               className="text-rose-500 px-3 py-2 text-sm cursor-pointer"
             >
               Delete Server
@@ -108,7 +109,8 @@ export const ServerHeader = ({
           )}
 
           {!isAdmin && (
-            <DropdownMenuItem
+          <DropdownMenuItem
+              onClick={() => onOpen("leaveServer", { server })}
               className="text-rose-500 px-3 py-2 text-sm cursor-pointer"
             >
               Leave Server
