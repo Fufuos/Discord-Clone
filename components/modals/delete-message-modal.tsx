@@ -4,18 +4,16 @@ import axios from "axios";
 import qs from "query-string";
 import { useState } from "react";
 
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle
+  DialogTitle,
 } from "@/components/ui/dialog";
-
-import { Button } from "@/components/ui/button";
 import { useModal } from "@/hooks/use-modal-store";
-
 
 export const DeleteMessageModal = () => {
   const { isOpen, onClose, type, data } = useModal();
@@ -47,8 +45,7 @@ export const DeleteMessageModal = () => {
     <Dialog open={isModalOpen} onOpenChange={onClose}>
       <DialogContent className="bg-white text-black p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
-
-          <DialogTitle className="text-2xl text-center fold-bont">
+          <DialogTitle className="text-2xl text-center font-bold">
             Delete Message
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
@@ -67,8 +64,8 @@ export const DeleteMessageModal = () => {
             </Button>
             <Button
               disabled={isLoading}
-              onClick={onClick}
               variant="primary"
+              onClick={onClick}
             >
               Confirm
             </Button>
