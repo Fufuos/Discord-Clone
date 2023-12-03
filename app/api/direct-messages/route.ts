@@ -17,11 +17,11 @@ export async function GET(
     const conversationId = searchParams.get("conversationId");
 
     if (!profile) {
-      return new nextResponse("Unauthorized", { status: 401 });
+      return new NextResponse("Unauthorized", { status: 401 });
     }
 
     if (!conversationId) {
-      return new nextResponse("Conversation ID missing", { status: 400 });
+      return new NextResponse("Conversation ID missing", { status: 400 });
     }
 
     let messages: DirectMessage[] = [];

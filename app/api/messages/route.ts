@@ -17,11 +17,11 @@ export async function GET(
     const channelId = searchParams.get("channelId");
 
     if (!profile) {
-      return new nextResponse("Unauthorized", { status: 401 });
+      return new NextResponse("Unauthorized", { status: 401 });
     }
 
     if (!channelId) {
-      return new nextResponse("Channel ID missing", { status: 400 });
+      return new NextResponse("Channel ID missing", { status: 400 });
     }
 
     let messages: Message[] = [];
