@@ -12,6 +12,7 @@ import { InviteModal } from "@/components/modals/invite-modal";
 import { LeaveServerModal } from "@/components/modals/leave-server-modal";
 import { MembersModal } from "@/components/modals/members-modal";
 import { MessageFileModal } from "@/components/modals/message-file-modal";
+import { DeleteMessageModal } from "@/components/modals/delete-message-modal";
 
 // Prevents modals from being rendered on the server side because that can create inconsistencies and therefore hydration errors
 
@@ -38,6 +39,7 @@ export const ModalProvider = () => {
       <DeleteChannelModal />
       <EditChannelModal />
       <MessageFileModal />
+      <DeleteMessageModal />
     </>
   )
 }
