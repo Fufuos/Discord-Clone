@@ -15,7 +15,7 @@ type socketContextType = {
   isConnected: boolean;
 };
 
-const SocketContext = createContext<SocketContextType>({
+const SocketContext = createContext<socketContextType>({
   socket: null,
   isConnected: false,
 });
