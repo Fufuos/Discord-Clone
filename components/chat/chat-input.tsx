@@ -8,7 +8,6 @@ import qs from "query-string";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-// import { EmojiPicker } from "@/components/emoji-picker";
 import { EmojiPicker } from "@/components/emoji-picker";
 import {
   Form,

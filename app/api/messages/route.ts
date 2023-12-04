@@ -4,11 +4,9 @@ import { db } from "@/lib/db";
 import { Message } from "@prisma/client";
 import { NextResponse } from "next/server";
 
-const MESSAGES_BATCH = 15;
+const MESSAGES_BATCH = 10;
 
-export async function GET(
-  req: Request
-) {
+export async function GET(req: Request) {
   try {
     const profile = await currentProfile();
     const { searchParams } = new URL(req.url);
@@ -40,12 +38,12 @@ export async function GET(
           member: {
             include: {
               profile: true,
-            }
-          }
+            },
+          },
         },
         orderBy: {
           createdAt: "desc",
-        }
+        },
       });
     } else {
       messages = await db.message.findMany({
@@ -57,13 +55,13 @@ export async function GET(
           member: {
             include: {
               profile: true,
-            }
-          }
+            },
+          },
         },
         orderBy: {
           createdAt: "desc",
-        }
-      })
+        },
+      });
     }
 
     let nextCursor = null;
@@ -74,7 +72,7 @@ export async function GET(
 
     return NextResponse.json({
       items: messages,
-      nextCursor
+      nextCursor,
     });
   } catch (error) {
     console.log("[MESSAGES_GET]", error);

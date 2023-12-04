@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Functional fullstack project using Next.js 13, React, Typescript, Socket.io, Prisma, Tailwind, MySQL
+
+## Features
+
+- Real-time messaging using Socket.io
+- Send attachments as messages using [UploadThing](https://uploadthing.com/)
+- Delete & Edit messages in real time for all users
+- Create Text, Audio and Video call Channels
+- 1:1 conversation between members
+- 1:1 video calls between members
+- Member management (Kick, Role change Guest / Moderator)
+- Unique invite link generation & full working invite system
+- Infinite loading for messages in batches of 10 (tanstack/query)
+- Server creation and customization
+- Beautiful UI using TailwindCSS and [shadcn/ui](https://ui.shadcn.com/)
+- Full responsivity and mobile UI
+- Light / Dark mode
+- Websocket fallback: Polling with alerts
+- ORM using [Prisma](https://www.prisma.io/)
+- MySQL database using [Planetscale](https://planetscale.com/)
+- Authentication with [Clerk](https://clerk.com/)
 
 ## Getting Started
 
-First, run the development server:
+### Cloning the repository
 
-```bash
+```shell
+git clone git@github.com:Fufuos/Discord-Clone.git
+```
+
+### Install packages
+
+```shell
+npm i
+```
+
+### Setup .env file
+
+```js
+// Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+// Defaults
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+
+// MySql
+DATABASE_URL=
+
+//UploadThing
+UPLOADTHING_SECRET=
+UPLOADTHING_APP_ID=
+
+// LiveKit
+LIVEKIT_API_KEY=
+LIVEKIT_API_SECRET=
+NEXT_PUBLIC_LIVEKIT_URL=
+```
+
+### Setup Prisma
+
+Add a MySQL Database
+```shell
+npx prisma generate
+npx prisma db push
+```
+
+### Finally, run the development server
+
+```shell
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+I used [railway.app](https://railway.app/), as it had a free trial and has the ability to link to my github repository
