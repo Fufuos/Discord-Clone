@@ -2,10 +2,10 @@
 
 ## Features
 
-- Real-time messaging using Socket.io
+- Real-time messaging using [Socket.io](https://livekit.io/)
 - Send attachments as messages using [UploadThing](https://uploadthing.com/)
 - Delete & Edit messages in real time for all users
-- Create Text, Audio and Video call Channels
+- Create Text, Audio and Video call Channels utilizing [livekit.io](https://livekit.io/)
 - 1:1 conversation between members
 - 1:1 video calls between members
 - Member management (Kick, Role change Guest / Moderator)
